@@ -18,7 +18,7 @@ public class Villano extends Personaje { //extends se usa para indicar que villa
             System.out.println(this.nombre + " ataca a " + oponente.nombre + " y le hace daño.");
             System.out.println(oponente.nombre + " se ha defendido del ataque, no recibe daño completo. Solo recibe " + danioReducido + " de daño");
         
-        } else{ //en caso de defensa se ejecuta 
+        } else{ //en caso de NO defensa se ejecuta 
         int danio = this.fuerza + random.nextInt(5) ;  //al daño generado se le suma un numero random entre 0 y 5 ya que el villano puede hacer trampa
         oponente.vida_hp -= danio;                           // la operacion danio - this.fuerza,  descifra el numero random generado para saber si se hizo o no trampa 
         System.out.println(this.nombre + " ataca a " + oponente.nombre);

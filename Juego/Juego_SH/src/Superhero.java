@@ -31,7 +31,7 @@ public class Superhero extends Personaje { //Se crea la clase Superhero que va a
             } else{
                 // Mostrar la vida restante del oponente en caso de que sea mayor a 0
             System.out.println("La vida de " + oponente.nombre + " después del ataque es: " + oponente.vida_hp);
-            }
+            } 
         System.out.println("------------------------------------------------");
     }   
 
