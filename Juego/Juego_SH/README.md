@@ -55,3 +55,6 @@ Dentro de la simulación del juego se usan algunos conceptos importantes de POO 
 4. Encapsulamiento: que permite cotrolar el acceso entre clases. Por ejemplo el uso en los atributos de protected, para permitir que los atributos o métodos sean accesibles únicamente dentro de la misma clase
 
 
+Nota: ![Agrego el diagrama usado para la elaboración del código.](diagrama.png)
+
+
