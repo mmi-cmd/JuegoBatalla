@@ -1,15 +1,22 @@
 import java.util.Scanner;
+import java.util.ArrayList; 
 public class BatallaSuperhero {
   public static void main(String[] args) {
       Scanner scanner = new Scanner(System.in);
-      
-
       String continuar;
       do {
-      Superhero superhero = new Superhero("Spiderman", 8, 40, 100); //se crea el objeto superhero
-      Villano villano = new Villano("Venom", 10, 50, 100); //se crea el objeto villano
-      Superhero superhero1 = new Superhero("Thor", 12, 50, 100); //se crea el objeto superhero
-      Villano villano1 = new Villano("Hela", 14, 60, 100); //se crea el objeto villano
+
+    ArrayList<Personaje> personajes = new ArrayList<Personaje>();
+
+      personajes.add(new Superhero("Spiderman", 8, 40, 100));
+      personajes.add(new Villano("Venom", 10, 50, 100));
+      personajes.add(new Superhero("Thor", 12, 50, 100));
+      personajes.add(new Villano("Hela", 14, 60, 100));
+
+        Personaje superhero = personajes.get(0);
+        Personaje villano = personajes.get(1);
+        Personaje superhero1 = personajes.get(2);
+        Personaje villano1 = personajes.get(3); 
 
         System.out.println();
         System.out.println("Estadísticas de inicio de la batalla 1");
@@ -23,35 +30,37 @@ public class BatallaSuperhero {
         System.out.println(superhero.nombre + " vs " + villano.nombre);
         System.out.println();
         
-      // Superhero ataca completamente a villano
+      //ATACA SUPERHERO
+        // Superhero ataca completamente a villano
         superhero.atacar(villano);
         villano.MostrarEstadísticasActuales();
   
      //Superhero ataca a villano, pero en este caso ha aumentado su poder usando la sobrecarga del metodo atacar
-        superhero.atacar(villano, 3);
+       ((Superhero)superhero).atacar(villano, 3); //casting explícito al tipo correcto (Superhero), ya que en la referencia Personaje, Java solo ve los métodos que pertenecen a Personaje.
   
         villano.MostrarEstadísticasActuales();
   
         //villano decide defenderse el ataque
         villano.defender(superhero);
   
-        superhero.atacar(villano, 3);
+        ((Superhero)superhero).atacar(villano, 3);
   
         villano.MostrarEstadísticasActuales(); 
   
+        //ATACA VILLANO
   
         // Villano ataca completamente a superhero
         villano.atacar(superhero);
         superhero.MostrarEstadísticasActuales();
   
         //Villano ataca a superhero, pero en este caso ha aumentado su poder usando la sobrecarga del metodo atacar
-        villano.atacar(superhero, 3);
+        ((Villano)villano).atacar(superhero, 3);
         superhero.MostrarEstadísticasActuales();
   
         //superhero decide defenderse el ataque
         superhero.defender(villano);
   
-        villano.atacar(superhero, 3);
+        ((Villano)villano).atacar(superhero, 3);
         superhero.MostrarEstadísticasActuales();
   
         //Ambos personajes se recuperan
@@ -84,14 +93,14 @@ public class BatallaSuperhero {
       villano1.MostrarEstadísticasActuales();
   
       //Superhero1 ataca a villano1, pero en este caso ha aumentado su poder usando la sobrecarga del metodo atacar
-      superhero1.atacar(villano1, 3);
+      ((Superhero)superhero1).atacar(villano1, 3);
   
       villano1.MostrarEstadísticasActuales();
   
       //villano1 decide defenderse el ataque
       villano1.defender(superhero1);
   
-      superhero1.atacar(villano1, 3);
+      ((Superhero)superhero1).atacar(villano1, 3);
   
       villano1.MostrarEstadísticasActuales(); 
   
@@ -101,13 +110,13 @@ public class BatallaSuperhero {
       superhero1.MostrarEstadísticasActuales();
   
       //Villano1 ataca a superhero1, pero en este caso ha aumentado su poder usando la sobrecarga del metodo atacar
-      villano1.atacar(superhero1, 3);
+      ((Villano)villano1).atacar(superhero1, 3);
       superhero1.MostrarEstadísticasActuales();
   
       //superhero1 decide defenderse el ataque
       superhero1.defender(villano1);
   
-      villano1.atacar(superhero1, 3);
+      ((Villano)villano1).atacar(superhero1, 3);
       superhero1.MostrarEstadísticasActuales();
   
       //Ambos personajes se recuperan
@@ -138,5 +147,6 @@ public class BatallaSuperhero {
         continuar=scanner.next();
       } while (continuar.equalsIgnoreCase("si"));
       System.out.println("End game...");
+      scanner.close();
   }
 }

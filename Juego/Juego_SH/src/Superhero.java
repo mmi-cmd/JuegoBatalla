@@ -69,7 +69,8 @@ public class Superhero extends Personaje { //Se crea la clase Superhero que va a
 
     @Override // se invoca al método abstracto, para que la subclase (superhero) implementar su propia versión de ataque especial
     public void ataqueEspecial(Personaje oponente) {
-        int danioEspecial = this.fuerza + 35; //como ataque especial, superhero aumenta su fuerza en 35 
+        int poder = 35;
+        int danioEspecial = this.fuerza + poder; //como ataque especial, superhero aumenta su fuerza en 35 
         oponente.vida_hp -= danioEspecial;
         System.out.println("El superHeroe "+ this.nombre + " se lanza contra su oponente " + oponente.nombre + " usando su ataque especial y reduce su vida en " + danioEspecial);
         

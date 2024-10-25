@@ -72,7 +72,8 @@ public class Villano extends Personaje { //extends se usa para indicar que villa
 
     @Override //metodo para hacer trampa
     public void ataqueEspecial(Personaje oponente) { // se invoca al método abstracto, para que la subclase (superhero) implementar su propia versión de ataque especial
-        int danioTrampa = this.fuerza * 2; //el atacante hace trampa para duplica su ataque
+        int trampa = 2;
+        int danioTrampa = this.fuerza * trampa; //el atacante hace trampa para duplica su ataque
         oponente.vida_hp -= danioTrampa;
             System.out.println("El villano " + this.nombre + " hace trampa, duplicado su ataque a " + oponente.nombre + " con una nueva fuerza de " + danioTrampa  );
         

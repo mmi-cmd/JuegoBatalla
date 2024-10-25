@@ -1,6 +1,6 @@
 public abstract class Personaje { // se crea una clase abstracta que funciona como la clase base o padre con la finalidad de que atributos compartidos pueden heredarse, así como la creación de funciones abstractas
                                 
-    protected String nombre; //se usa protected para permitir que los atributos o métodos sean accesibles únicamente dentro de la misma clase
+    protected String nombre; //se usa protected para permitir que los atributos o métodos sean accesibles únicamente dentro de la misma clase y por las clases hijas
     protected int fuerza;
     protected int velocidad;
     protected int vida_hp;
@@ -14,6 +14,7 @@ public abstract class Personaje { // se crea una clase abstracta que funciona co
         this.vida_hp = vida_hp;
         this.isDefending = false;
     }
+
 
     public void MostrarEstadísticasActuales (){ // se crea metodo normal para mostrar las estadisticas actuales
         System.out.println("Soy " + this.nombre + " y estas son mis estadísticas: ");
